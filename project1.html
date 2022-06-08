@@ -34,7 +34,7 @@
 						<div class="box alt">
 							<div class="row gtr-50 gtr-uniform">
 								<div class="col-12">
-									<video class="image fit" controls>
+									<video class="image fit" id="projectVideo" controls>
 										<source src="media/rick_roll.mp4" type="video/mp4">
 											Your browser does not support the video tag.
 									</video>
@@ -50,12 +50,9 @@
 								<h2>Timestamps: </h2>
 								<div>
 									<ul class="alt">
-										<li>Feature 1 - </li>
-										<li>Feature 2 - </li>
-										<li>Feature 3 - </li>
-										<li>Feature 4 - </li>
-										<li>Feature 5 - </li>
-										<li>Feature 6 - </li>
+										<li><button type="button" onClick="setCurrentTime(60)" class="timestamp button">1 Minute In - 1:00</button></li>
+										<li><button type="button" onClick="setCurrentTime(120)" class="timestamp button">2 Minutes In - 2:00</button></li>
+										<li><button type="button" onClick="setCurrentTime(180)" class="timestamp button">3 Minutes In - 3:00</button></li>
 									</ul>
 								</div>
 							</div>
@@ -133,6 +130,15 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script type="text/javascript">
+				var projectVideo = document.getElementById("projectVideo");
 
+				function getCurrentTime(){
+					alert(projectVideo.currentTime);
+				}
+				function setCurrentTime(time){
+					projectVideo.currentTime = time;
+				}
+			</script>
 	</body>
 </html>
